@@ -19,7 +19,7 @@ html {
 	height: 100vh;
 	display: grid;
 	place-items: center;
-	background-color: #ccccf1;
+	background-color: #C8AD7F;
 	overflow: hidden;
 }
 
@@ -208,40 +208,71 @@ html {
 	text-transform: uppercase;
 }
 
-/* Case active quand on survole avec une pièce */
-.active {
-    outline: 3px dashed #4caf50;
-    transform: scale(1.05);
-    transition: transform 0.2s ease, outline 0.2s ease;
+
+/* Titres */
+.victory-title {
+    color: #4caf50;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Pièce déposée avec succès */
-.drop-success {
-    animation: dropPop 0.3s ease;
+.defeat-title {
+    color: #f44336;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-@keyframes dropPop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
+/* Boutons rejouer */
+.modal-btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
-/* Effet de victoire */
-.modal-victory {
-    animation: victoryFlash 1s ease-in-out 3;
+.victory-btn {
+    background: #4caf50;
+    color: white;
 }
 
-@keyframes victoryFlash {
-    0%, 100% { background-color: transparent; }
-    50% { background-color: rgba(76, 175, 80, 0.3); }
+.victory-btn:hover {
+    background: #43a047;
 }
 
-/* Effet de défaite */
-.modal-defeat {
-    animation: defeatFlash 1s ease-in-out 3;
+.defeat-btn {
+    background: #f44336;
+    color: white;
 }
 
-@keyframes defeatFlash {
-    0%, 100% { background-color: transparent; }
-    50% { background-color: rgba(244, 67, 54, 0.3); }
+.defeat-btn:hover {
+    background: #e53935;
+}
+
+/* Animation modal */
+.modal-animate {
+    animation: zoomFade 0.8s ease forwards;
+    white-space: normal;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+@keyframes zoomFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
