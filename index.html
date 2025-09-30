@@ -1,33 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
+  <h1>✨ Fonctionnement :
+CONTRE-LA-MONTRE
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="QcCQ5BL1PL6AdwbsLOPOXR5G7yoo6yc1T8QF1nZJ1xs" />
+  <meta name="google-adsense-account" content="ca-pub-3859091246952232">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3859091246952232"
+     crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer type="module"></script>
   <title>Puzzle Game</title>
 </head>
 <body>
+
+  <!-- Bouton pour lancer la musique -->
+  <button onclick="playMusic()" class="btn">🎵 Play Music</button>
+
+  <script>
+  function playMusic() {
+    let player = document.createElement("iframe");
+    player.width = "0";
+    player.height = "0";
+    // ✅ Vidéo YouTube avec autoplay + loop
+    player.src = "https://www.youtube.com/embed/w8LdqmggjUE?autoplay=1&loop=1&playlist=w8LdqmggjUE";
+    player.allow = "autoplay";
+    player.style.display = "none"; // caché
+    document.body.appendChild(player);
+  }
+  </script>
+
+  <!-- Google Ads -->
   <amp-ad width="100vw" height="320"
      type="adsense"
      data-ad-client="ca-pub-3859091246952232"
      data-ad-slot="4800785906"
      data-auto-format="rspv"
      data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3859091246952232"
-     crossorigin="anonymous"></script>
-<!-- DISPLAY -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3859091246952232"
-     data-ad-slot="4800785906"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <div overflow=""></div>
+  </amp-ad>
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3859091246952232"
+       data-ad-slot="4800785906"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <!-- Puzzle -->
   <div class="container">
     <div class="puzzle-wrapper">
       <div class="cells"></div>
@@ -45,6 +73,7 @@
     </div>
   </div>
 
+  <!-- Modal -->
   <div class="modal">
     <div class="modal-content">
       <h2 class="modal-heading">Game Over</h2>
@@ -55,9 +84,16 @@
     </div>
   </div>
 
+  <!-- Chrono + sons -->
+  <div id="global-chrono" class="global-chrono"></div>
+  <audio id="alarm-sound" src="sounds/alarm.mp3" preload="auto"></audio>
+  <audio id="tick-sound" src="sounds/tick-tock.mp3" preload="auto"></audio>
+
+  <!-- Loader -->
   <div class="loader action">
     <img src="images/loader.gif" alt="Loading..." />
   </div>
- <h1 class="heading">Puzzle Quest 4</h1>
+ <h1 class="heading">Puzzle Quest 5</h1>
+
 </body>
 </html>
